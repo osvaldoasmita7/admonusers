@@ -77,6 +77,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 #
 
-#
+# En el arhcivo .env
+
+# Va la ruta donde está montado el backend para que se hagan las peticiones
 
 ##
