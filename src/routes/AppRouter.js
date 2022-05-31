@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { Dashboard } from "../pages/Dashboard";
 import { Login } from "../pages/Login";
@@ -20,6 +20,19 @@ export const AppRouter = () => {
   if (loading) return <>Cargando</>;
   return (
     <>
+      {auth.token && (
+        <div className="col-12 text-right px-5 pt-3">
+          <a
+            onClick={() => {
+              localStorage.clear();
+              window.location.href = "/";
+            }}
+          >
+            Cerrar sesión
+          </a>
+        </div>
+      )}
+
       <BrowserRouter>
         <Routes>
           <Route exact path="*" element={<NotFound />} />
